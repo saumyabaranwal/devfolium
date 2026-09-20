@@ -1,6 +1,11 @@
 import {
+  BookOpen,
+  BriefcaseBusiness,
   Camera,
   FileText,
+  GraduationCap,
+  House,
+  Mail,
   Menu,
   Pencil,
   Plus,
@@ -28,24 +33,26 @@ export function ProfileEditor({ profile, onChange }: Props) {
 
   return (
     <aside className="panel editor-panel">
-      <h1>Build your portfolio</h1>
-      <p className="muted">Add your details, then make it yours.</p>
+      <div className="editor-intro">
+        <h1>Build your portfolio</h1>
+        <p>Add your details, then make it yours.</p>
+      </div>
 
       <div className="step-area">
         <span>Step 1 of 4</span>
-        <div className="progress-track">
+        <div className="progress-track" aria-label="Portfolio progress">
           <div className="progress-value" />
         </div>
       </div>
 
       <div className="start-options">
         <button className="choice-card active-choice">
-          <Pencil size={31} />
+          <Pencil size={30} />
           <strong>Fill manually</strong>
         </button>
 
-        <button className="choice-card">
-          <FileText size={31} />
+        <button className="choice-card upload-card">
+          <FileText size={30} />
           <strong>Upload résumé</strong>
           <span>We’ll extract your details for review</span>
           <small>PDF only · up to 5 MB</small>
@@ -53,13 +60,16 @@ export function ProfileEditor({ profile, onChange }: Props) {
         </button>
       </div>
 
-      <div className="form-scroll">
+      <div className="form-area">
         <div className="profile-row">
-          <div className="avatar-upload">
-            <div className="avatar-placeholder">SB</div>
-            <button aria-label="Upload profile photo">
-              <Camera size={17} />
-            </button>
+          <div>
+            <span className="field-label">Profile image</span>
+            <div className="avatar-upload">
+              <div className="avatar-placeholder">SB</div>
+              <button aria-label="Upload profile image">
+                <Camera size={16} />
+              </button>
+            </div>
           </div>
 
           <label>
@@ -96,7 +106,8 @@ export function ProfileEditor({ profile, onChange }: Props) {
         </label>
 
         <div className="skills-field">
-          <span>Skills</span>
+          <span className="field-label">Skills</span>
+
           <div className="skill-list">
             {profile.skills.map((skill) => (
               <button
@@ -110,6 +121,7 @@ export function ProfileEditor({ profile, onChange }: Props) {
               </button>
             ))}
           </div>
+
           <button className="add-skill">
             <Plus size={15} />
             Add skill
@@ -117,16 +129,31 @@ export function ProfileEditor({ profile, onChange }: Props) {
         </div>
       </div>
 
-      <nav className="section-nav">
+      <nav className="section-nav" aria-label="Portfolio sections">
         <a className="active-section" href="#about">
-          <Menu size={16} />
+          <House size={15} />
           About
         </a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+        <a href="#skills">
+          <Menu size={15} />
+          Skills
+        </a>
+        <a href="#projects">
+          <BriefcaseBusiness size={15} />
+          Projects
+        </a>
+        <a href="#experience">
+          <BookOpen size={15} />
+          Experience
+        </a>
+        <a href="#education">
+          <GraduationCap size={15} />
+          Education
+        </a>
+        <a href="#contact">
+          <Mail size={15} />
+          Contact
+        </a>
       </nav>
     </aside>
   );

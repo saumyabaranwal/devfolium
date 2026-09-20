@@ -9,23 +9,20 @@ export function Header() {
       </a>
 
       <nav className="nav-links">
-        <a href="#about">About us</a>
-        <a href="#programs">Programs</a>
-        <a href="#blog">Blog</a>
-        <a href="#courses">Courses</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">Build your personalised portfolio.</a>
       </nav>
 
       <div className="header-actions">
         <span className="saved-status">
-          <CheckCircle2 size={18} />
+          <CheckCircle2 size={17} />
           Autosaved
         </span>
+
         <button className="button button-secondary">
           <Eye size={17} />
-          Preview
+          <span>Preview</span>
         </button>
+
         <button className="button button-primary">Publish portfolio</button>
       </div>
     </header>

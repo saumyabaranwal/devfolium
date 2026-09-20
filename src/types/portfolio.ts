@@ -7,3 +7,5 @@ export type Profile = {
   location: string;
   skills: string[];
 };
+
+export type EditorTab = "edit" | "preview" | "customize";
