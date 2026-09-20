@@ -1325,3 +1325,191 @@ textarea {
     overflow: visible;
   }
 }
+/* Improved desktop proportions */
+@media (min-width: 721px) {
+  .editor-layout {
+    grid-template-rows: minmax(0, 1.65fr) minmax(205px, 0.72fr);
+  }
+
+  .preview-panel {
+    background: #fffaf0;
+  }
+
+  .customize-panel {
+    height: 100%;
+    overflow: hidden;
+    background: #e9dfc7;
+  }
+
+  .editor-panel {
+    background: #f4ecd9;
+  }
+
+  .form-area {
+    margin-top: 10px;
+    padding-right: 10px;
+  }
+
+  .choice-card {
+    min-height: 105px;
+    padding: 11px 8px;
+  }
+
+  .choice-card strong {
+    font-size: 14px;
+  }
+
+  .choice-card span {
+    font-size: 11px;
+  }
+
+  .choice-card small {
+    font-size: 9px;
+  }
+
+  .theme-thumbnail {
+    width: 60px;
+    height: 54px;
+    padding: 9px;
+  }
+
+  .customize-panel h2 {
+    margin-bottom: 12px;
+  }
+
+  .accent-section {
+    margin-top: 14px;
+  }
+
+  .customize-middle {
+    gap: 12px;
+    padding-top: 34px;
+  }
+
+  .completeness-card {
+    padding: 12px;
+  }
+
+  .completeness-card p {
+    margin-top: 8px;
+  }
+}
+
+/* Full scrollable form styling */
+.form-section {
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid #c7c0ad;
+  padding: 17px 0;
+}
+
+.form-section:first-child {
+  border-top: 0;
+  padding-top: 2px;
+}
+
+.form-section-title {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 7px;
+  border-radius: 7px;
+  padding: 6px 9px;
+  background: #272622;
+  color: #fffdf7;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.add-entry {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  gap: 6px;
+  border: 1px dashed #716c60;
+  border-radius: 9px;
+  padding: 9px 11px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.add-entry:hover {
+  transform: translateY(-2px);
+  background: var(--accent);
+}
+
+/* Sticky mobile navigation: page content scrolls behind it */
+@media (max-width: 720px) {
+  .app-shell {
+    min-height: 100dvh;
+    padding-bottom: 88px;
+  }
+
+  .mobile-tabs {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    z-index: 100;
+    margin: 0;
+    border: 1.5px solid var(--ink);
+    border-radius: 14px;
+    padding: 7px;
+    background: rgba(255, 253, 248, 0.96);
+    box-shadow: 0 10px 28px rgba(40, 35, 25, 0.18);
+    backdrop-filter: blur(12px);
+  }
+
+  .mobile-tabs button {
+    min-height: 42px;
+  }
+
+  .editor-layout {
+    overflow: visible;
+  }
+
+  .editor-panel,
+  .preview-panel,
+  .customize-panel {
+    overflow: visible;
+  }
+
+  .form-area {
+    overflow: visible;
+  }
+
+  .form-section {
+    padding: 16px 0;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-card {
+    min-height: 104px;
+  }
+
+  .customize-panel {
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .customize-middle {
+    border-top: 1px solid #cec4af;
+    border-left: 0;
+    margin-top: 20px;
+    padding: 20px 0 0;
+  }
+}
