@@ -1,6 +1,14 @@
-import { CheckCircle2, Eye } from "lucide-react";
+import { CheckCircle2, Eye, LoaderCircle } from "lucide-react";
 
-export function Header() {
+type Props = {
+  saveStatus: "idle" | "saving" | "saved" | "error";
+  message: string;
+  onPublish: () => void;
+};
+
+export function Header({ saveStatus, message, onPublish }: Props) {
+  const isSaving = saveStatus === "saving";
+
   return (
     <header className="topbar">
       <a className="brand" href="/">
@@ -8,14 +16,16 @@ export function Header() {
         <span>DevFolium</span>
       </a>
 
-      <nav className="nav-links">
-        <a href="#about">Build your personalised portfolio.</a>
-      </nav>
+      <p className="header-tagline">Build your personalised portfolio.</p>
 
       <div className="header-actions">
-        <span className="saved-status">
-          <CheckCircle2 size={17} />
-          Autosaved
+        <span className={`saved-status status-${saveStatus}`}>
+          {isSaving ? (
+            <LoaderCircle className="spin" size={17} />
+          ) : (
+            <CheckCircle2 size={17} />
+          )}
+          {message}
         </span>
 
         <button className="button button-secondary">
@@ -23,7 +33,13 @@ export function Header() {
           <span>Preview</span>
         </button>
 
-        <button className="button button-primary">Publish portfolio</button>
+        <button
+          className="button button-primary"
+          onClick={onPublish}
+          disabled={isSaving}
+        >
+          {isSaving ? "Publishing…" : "Publish portfolio"}
+        </button>
       </div>
     </header>
   );

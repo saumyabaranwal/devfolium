@@ -1513,3 +1513,42 @@ textarea {
     padding: 20px 0 0;
   }
 }
+.header-tagline {
+  margin: 0 0 0 26px;
+  color: #25231f;
+  font-size: 14px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+
+.status-saving {
+  color: #625f55;
+}
+
+.status-saved {
+  color: #315f42;
+}
+
+.status-error {
+  color: #a33425;
+}
+
+.spin {
+  animation: spin 900ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 720px) {
+  .header-tagline {
+    display: none;
+  }
+}
